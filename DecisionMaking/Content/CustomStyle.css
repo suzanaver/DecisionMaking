@@ -1,0 +1,141 @@
+﻿.control-label
+{
+    font-weight: bold;
+}
+.MARGIN-TOP-10PX
+{
+    margin-top: 10px;
+}
+.add-risk, .add-adventage
+{
+    margin-top: 10px;
+    border-radius: 2px !important;
+}
+
+.option
+{
+    border: 1px solid #e5e5e5;
+    padding: 11px;
+    border-radius: 2px !important;
+}
+.addNewOption
+{
+    border-radius: 2px !important;
+    margin-top : 8px;
+}
+
+.optionsSection
+{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.advantages-section, .risks-section
+{
+    margin-top: 15px;
+}
+
+.advantage-wrapper,.risk-wrapper
+{
+    border: 1px solid #e5e5e5;
+    padding: 11px;
+    border-radius: 2px !important;
+    margin-top : 10px;
+}
+.advantage-wrapper.delete,
+.risk-wrapper.delete,
+.decision-option-input.delete .form-group
+{
+   background : #FFB5B5 !important;
+}
+
+
+.advantage-wrapper .delete-advantage-cancle,
+.risk-wrapper .delete-risk-cancle,
+.decision-option-input .delete-option-cancle
+{
+    display: none;
+}
+
+.advantage-wrapper.delete .delete-advantage-cancle,
+.risk-wrapper.delete .delete-risk-cancle,
+.decision-option-input.delete .delete-option-cancle
+{
+    display: inherit;
+}
+.delete-advantage,.delete-advantage-cancle,
+.delete-risk,.delete-risk-cancle,
+.delete-option,.delete-option-cancle
+{
+    margin-top : 5px;
+    border-radius : 2px !important;
+}
+.advantage-wrapper.delete .delete-advantage,
+.risk-wrapper.delete .delete-risk,
+.decision-option-input.delete .delete-option
+{
+    display: none;
+}
+
+
+.option-advantages-inputs input,
+.option-risks-inputs input,
+.option-advantages-inputs textarea,
+.option-risks-inputs textarea
+{
+    margin-top: 10px;
+}
+
+.option
+{
+    height: 442.24px;
+    overflow-y: auto;
+}
+
+.decision-option-input
+{
+}
+
+.FONT-SIZE-18PX
+{
+    font-size: 18px;
+}
+.next-step-input .delete-next-step-cancel
+{
+    display: none;
+}
+.next-step-input.delete .delete-next-step-cancel
+{
+    display: inherit;
+}
+.next-step-input.delete .delete-next-step
+{
+    display: none;
+}
+
+.next-step-input.delete td
+{
+    background: #FFB5B5 !important;
+}
+
+
+
+
+.first-section
+{
+    background-color : #fff9ef;
+    padding : 15px;
+    
+}
+.seccond-section
+{
+    background-color : #f8fff9;
+    padding : 15px;
+     margin-top :  10px;
+}
+.third-section
+{
+    background-color : #f4fbff;
+    padding : 15px;
+    margin-top : 10px;
+}

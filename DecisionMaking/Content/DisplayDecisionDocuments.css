@@ -1,0 +1,36 @@
+﻿body {
+}
+
+h2
+{
+    color : forestgreen;
+    font-weight : bold !important;
+}
+.Decision-documents-wrapper .Decision-documents-item
+{
+ 
+    margin-top : 10px
+}
+.Decision-documents-wrapper .Decision-documents-item .title
+{
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.Decision-documents-wrapper a:hover
+{
+  
+    text-decoration: none !important;
+        font-weight : bold;
+}
+
+.Decision-documents-wrapper
+{
+    min-height : 500px;
+}
+.Decision-documents-wrapper .Decision-documents-item .title:hover
+{
+    font-size: 24px;
+    text-decoration: none !important;
+    font-weight : bold;
+}

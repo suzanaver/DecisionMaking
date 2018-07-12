@@ -1,0 +1,33 @@
+﻿@model Models.NextStep
+
+<tr class="next-step-input" data-next-step-id="@Model.ID">
+
+    <td>
+        <input type="text" name="Mission" class="form-control input-small no-serialized" value="@Model.Mission" />
+    </td>
+    <td>
+        <input type="text" name="Responsibility" class="form-control input-small no-serialized autocomplete" value="@Model.Responsibility"  />
+    </td>
+    <td>
+        <input type="text" name="Due_date" class="form-control input-small no-serialized date-picker" value="@Model.Due_date" />
+    </td>
+    <td class="center">
+        <input type="text" name="Date_postponed" class="form-control input-small no-serialized date-picker" value="@Model.Date_postponed" />
+    </td>
+   
+    <td>
+       <button type="button" class="btn btn-xs btn-danger delete-next-step")>
+                        מחיקה</button>
+                         <button type="button" class="btn btn-xs btn-default delete-next-step-cancel">
+                        ביטול</button>
+    </td>
+    
+ 
+</tr>
+@*
+                             public int ID { get; set; }
+        public string Mission { get; set; }
+        public string Responsibility { get; set; }
+        public string Due_date { get; set; }
+        public string Date_postponed { get; set; }
+        public int DecisionID { get; set; }*@

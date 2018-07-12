@@ -1,0 +1,11 @@
+﻿@model Models.OptionAdvantage
+@*
+<input data-advandate-id="@Model.ID" type="text" name="Description" class="form-control advandate no-serialized" value="@Model.Description" placeholder="יתרון">
+   *@
+<div class="advantage-wrapper">
+    <textarea data-advandate-id="@Model.ID" name="Description" class="form-control advandate no-serialized" placeholder="יתרון">@Model.Description</textarea>
+    <button type="button" class="btn btn-xs btn-danger delete-advantage">
+        מחק יתרון</button>
+    <button type="button" class="btn btn-xs btn-default delete-advantage-cancle">
+        בטל מחיקה</button>
+</div>

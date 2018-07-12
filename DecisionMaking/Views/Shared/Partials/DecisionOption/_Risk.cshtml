@@ -1,0 +1,11 @@
+﻿@model Models.OptionRisk
+
+ <div class="risk-wrapper">
+    <textarea data-risk-id="@Model.ID" name="Description" class="form-control advandate no-serialized risk" placeholder="סיכון">@Model.Description</textarea>
+      <button type="button" class="btn btn-xs btn-danger delete-risk">
+        מחק סיכון</button>
+    <button type="button" class="btn btn-xs btn-default delete-risk-cancle">
+          בטל מחיקה</button>
+    </div>            
+     
+

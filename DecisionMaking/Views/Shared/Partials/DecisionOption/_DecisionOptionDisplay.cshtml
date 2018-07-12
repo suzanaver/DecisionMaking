@@ -1,0 +1,45 @@
+﻿@model Models.DecisionOption
+<div class="col-md-4 decision-option-input">
+    <div class="form-group option">
+        <label class="label-name">
+            אפשרות <span class="option-number">@ViewData["OptionNumber"].ToString()</span> : </label>
+        <label class="label-value">@Model.Description</label>
+        <div class="optionAdvantage">
+         <label class="label-name">
+            יתרונות:</label>
+        <ul>
+            @foreach (var optionAdvantage in Model.OptionAdvantages)
+            {
+                <li>
+                    <label class="label-value">@optionAdvantage.Description</label>
+                </li>
+                 
+            }
+        </ul>
+        </div>
+       
+        <br />
+        <div class="OptionRisks">
+          <label class="label-name">
+            סיכונים:</label>
+        <ul>
+            @foreach (var optionRisk in Model.OptionRisks)
+            {
+                <li>
+                    <label class="label-value">@optionRisk.Description</label>
+                </li>
+                 
+            }
+        </ul>
+        </div>
+     
+    </div>
+</div>
+@*
+
+                              public int ID { get; set; }
+        public int Description { get; set; }
+        public int DecisionID { get; set; }
+        public IEnumerable<OptionAdvantage> OptionAdvantages { get; set; }
+        public IEnumerable<OptionRisk> OptionRisks { get; set; }
+*@

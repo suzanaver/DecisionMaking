@@ -1,0 +1,11 @@
+﻿.decision-option-input
+{
+    border: 1px solid #e5e5e5 !important;
+    padding: 11px;
+    border-radius: 2px !important;
+    margin-top: 10px;
+}
+#CreateDecisionForm .errors
+{
+    display : inline-block;
+}

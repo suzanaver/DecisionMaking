@@ -1,0 +1,204 @@
+﻿@model DecisionMaking.Models.CreateDecisionViewModel
+@{
+    ViewBag.Title = "CreateDecision";
+}
+
+    @section PageLevelStyle
+{
+        <link href="@Url.Content("~/assets/plugins/bootstrap-select/bootstrap-select-rtl.min.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/assets/plugins/select2/select2-rtl.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/assets/plugins/select2/select2-metronic-rtl.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/assets/plugins/bootstrap-datepicker/css/datepicker.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/assets/plugins/bootstrap-fileinput/bootstrap-fileinput.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/assets/plugins/jquery-notific8/jquery.notific8.min.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/CreateDecision.css")" rel="stylesheet" type="text/css" />
+
+    }
+    @section CustomStyle
+{
+        <link href="@Url.Content("~/Content/CustomStyle.css")" rel="stylesheet" type="text/css" />
+    }
+    @section PageLevelScripts
+{
+        <script src="@Url.Content("~/assets/plugins/jquery-validation/dist/jquery.validate.min.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js")" type="text/javascript"></script>
+        <!-- IMPORTANT! fullcalendar depends on jquery-ui-1.10.3.custom.min.js for drag & drop support -->
+        <script src="@Url.Content("~/assets/plugins/jquery-notific8/jquery.notific8.min.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/assets/scripts/custom/component-pickers.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/assets/scripts/core/app.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/CreateDecision.js")" type="text/javascript"></script>
+    }
+    <div class="row">
+        <div class="col-md-12">
+            <!-- BEGIN SAMPLE FORM PORTLET-->
+            <div class="portlet box green ">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-reorder"></i>יצירת החלטה
+                    </div>
+                    <div class="tools">
+                        <a href="" class="collapse"></a><a href="#portlet-config" data-toggle="modal" class="config"></a><a href="" class="reload"></a><a href="" class="remove"></a>
+                    </div>
+                </div>
+                <div class="portlet-body form">
+                    <form id="CreateDecisionForm" class="horizontal-form" role="form" action="@Url.Action("SubmitNewDecision", "Home")">
+
+                        <div class="form-body">
+
+
+                            <div class="first-section">
+                                <div class="row">
+
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                אגף :
+                                            </label>
+                                            <select name="@Html.DisplayNameFor(m => m.CreateDecision.Department)" class="form-control">
+                                                <option value="">בחר...</option>
+                                                @foreach (var department in Model.Departments)
+                                                {
+                                                    <option value="@department" @Html.Raw(@Model.CreateDecision.Department == @department ? "selected" : "")>@department</option>
+
+                                                }
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                נושא :
+                                            </label>
+                                            <input type="text" name="@Html.DisplayNameFor(m => m.CreateDecision.Subject)" value="@Model.CreateDecision.Subject" class="form-control" placeholder="נושא">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                תאריך :
+                                            </label>
+                                            <input name="@Html.DisplayNameFor(m => m.CreateDecision.openeddate)" class="form-control  input-medium date-picker" value="@Model.CreateDecision.openeddate" size="16"
+                                                   type="text" value="" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                החלטה נדרשת :
+                                            </label>
+                                            <input type="text" name="@Html.DisplayNameFor(m => m.CreateDecision.Requireddecision)" class="form-control" value="@Model.CreateDecision.Requireddecision" placeholder="החלטה נדרשת">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                תיאור מצב נוכחי :
+                                            </label>
+                                            <input type="text" name="@Html.DisplayNameFor(m => m.CreateDecision.Currentstatedesc)" class="form-control" value="@Model.CreateDecision.Currentstatedesc" placeholder="תיאור מצב נוכחי">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="seccond-section">
+                                <div class="row @Html.DisplayNameFor(m => m.CreateDecision.DecisionOptions) optionsSection">
+                                    <label class="col-md-12 control-label">
+                                        אפשרויות :
+                                    </label>
+
+
+                                    <div class="options">
+                                        @if (Model.CreateDecision.DecisionOptions != null)
+                                        {
+                                            var counter = 1;
+                                            foreach (var option in Model.CreateDecision.DecisionOptions)
+                                            {
+                                                Html.RenderPartial("~/Views/Shared/Partials/DecisionOption/_DecisionOption.cshtml", option, new ViewDataDictionary { { "OptionNumber", counter } });
+                                                counter++;
+                                            }
+                                        }
+                                        else
+                                        {
+                                            var newDecisionOption = new Models.DecisionOption();
+                                            Html.RenderPartial("~/Views/Shared/Partials/DecisionOption/_DecisionOption.cshtml", newDecisionOption, new ViewDataDictionary { { "OptionNumber", 1 } });
+                                            //Html.RenderPartial("~/Views/Shared/Partials/DecisionOption/_DecisionOption.cshtml", newDecisionOption, new ViewDataDictionary { { "OptionNumber", 2 } });
+                                            //Html.RenderPartial("~/Views/Shared/Partials/DecisionOption/_DecisionOption.cshtml", newDecisionOption, new ViewDataDictionary { { "OptionNumber", 3 } });
+                                        }
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button class="btn btn-sm green addNewOption">
+                                            הוסף אפשרות
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="third-section">
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                המלצה ונימוק :
+                                            </label>
+                                            <input type="text" class="form-control " placeholder=" המלצה ונימוק" name="@Html.DisplayNameFor(m => m.CreateDecision.Recandreason)" value="@Model.CreateDecision.Recandreason">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                החלטה :
+                                            </label>
+                                            <input type="text" name="@Html.DisplayNameFor(m => m.CreateDecision.Decision)" class="form-control" placeholder=" החלטה :" value="@Model.CreateDecision.Decision">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row @Html.DisplayNameFor(m => m.CreateDecision.NextSteps)">
+                                    <label class="col-md-12 control-label">
+                                        צעדים להמשך :
+                                    </label>
+                                    @{
+                                        if (Model.CreateDecision.NextSteps != null)
+                                        {
+                                            Html.RenderPartial("~/Views/Shared/Partials/NextSteps/_NextSteps.cshtml", Model.CreateDecision.NextSteps);
+
+                                        }
+                                        else
+                                        {
+
+                                            var nextSteps = new List<Models.NextStep>();
+                                            Html.RenderPartial("~/Views/Shared/Partials/NextSteps/_NextSteps.cshtml", nextSteps);
+                                        }
+
+
+                                    }
+                                </div>
+                            </div>
+
+                            <div class="form-actions fluid">
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button type="submit" class="btn green">
+                                        שמור
+                                    </button>
+                                    <div class="errors">
+                                        <div class="form-group">
+
+
+                                            <input type="hidden" name="ID" value="@Model.CreateDecision.ID" />
+                                            <input type="hidden" name="STATUS" value="1" />
+                                            <input type="hidden" name="DecisionElement" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

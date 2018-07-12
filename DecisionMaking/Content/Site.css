@@ -1,0 +1,13 @@
+﻿body
+{
+    background-color : inherit !important;
+}
+
+.footer-details
+{
+    text-align: center;
+    margin-bottom : 20px;
+    
+    font-size: 14px;
+    color : #888;
+}

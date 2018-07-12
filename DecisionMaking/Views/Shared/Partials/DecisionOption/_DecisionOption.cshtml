@@ -1,0 +1,73 @@
+﻿@model Models.DecisionOption
+<div class="col-md-4">
+    <div class=" decision-option-input" data-option-id="@Model.ID">
+    <input type="hidden" class="decision-option-input-element"/>
+        <div class="form-group option" data-option-number="@ViewData["OptionNumber"].ToString()">
+            <label class="control-label">
+                אפשרות : @ViewData["OptionNumber"]</label>
+            <input type="text" class="Description" name="Description" class="form-control no-serialized" value="@Model.Description"
+            placeholder="תיאור מצב נוכחי">
+            <div class="advantages-section">
+                <label class="control-label">
+                    יתרונות:</label>
+                <div class="option-advantages-inputs">
+                <input type="hidden" class="option-advantages-inputs-element not-submit" />
+                    @if (Model.OptionAdvantages != null)
+                    {
+                         if (Model.OptionAdvantages.Count() > 0)
+                            {
+                                foreach (var advantage in Model.OptionAdvantages)
+                                {
+
+                                    Html.RenderPartial("~/Views/Shared/Partials/DecisionOption/_Advantage.cshtml", advantage);
+
+
+                                }
+
+                            }
+                    }
+                   
+                    else
+                    {
+                        Html.RenderPartial("~/Views/Shared/Partials/DecisionOption/_Advantage.cshtml", new Models.OptionAdvantage());
+
+                    }
+                    <button type="button" class="add-adventage btn green btn-xs">
+                        הוסף יתרון</button>
+                </div>
+            </div>
+            <div class="risks-section">
+                <label>
+                    סיכונים:</label>
+                <div class="option-risks-inputs">
+                <input type="hidden" class="option-risks-inputs-element not-submit" />
+                    @if (Model.OptionRisks != null)
+                    {
+                         if (Model.OptionRisks.Count() > 0)
+                    {
+                        foreach (var risk in Model.OptionRisks)
+                        {
+                            Html.RenderPartial("~/Views/Shared/Partials/DecisionOption/_Risk.cshtml", risk);
+
+                        }
+
+                    }
+                    }
+                   
+                    else
+                    {
+
+                        Html.RenderPartial("~/Views/Shared/Partials/DecisionOption/_Risk.cshtml", new Models.OptionRisk());
+
+                    }
+                    <button type="button" class="btn green btn-xs add-risk">
+                        הוסף סיכון</button>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-xs btn-danger delete-option">
+            מחק אפשרות</button>
+        <button type="button" class="btn btn-xs btn-default delete-option-cancle">
+            בטל מחיקה</button>
+    </div>
+</div>

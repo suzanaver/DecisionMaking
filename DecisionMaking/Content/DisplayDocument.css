@@ -1,0 +1,40 @@
+﻿body {
+}
+
+.label-value,.label-name {
+vertical-align : top;
+}
+
+.label-name
+{
+    font-weight : bold;
+    width : 28%;
+}
+.label-value
+{
+    width : 71%;
+}
+.label-section
+{
+    font-weight : bold;
+}
+.options-section
+{
+    margin-top : 25px;
+  
+}
+.NextSteps
+{
+    margin-top : 25px;
+}
+
+
+.top-section
+{
+    border: 1px solid #e5e5e5;
+    padding: 11px;
+    border-radius: 2px !important;
+}
+.WIDTH-50px {
+width : 50px !important;
+}

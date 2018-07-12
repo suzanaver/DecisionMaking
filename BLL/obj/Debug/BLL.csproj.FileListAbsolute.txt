@@ -1,0 +1,10 @@
+C:\Users\suzanna.vershinin\Desktop\DOTNET\DecisionMaking\DecisionMaking\BLL\bin\Debug\BLL.dll
+C:\Users\suzanna.vershinin\Desktop\DOTNET\DecisionMaking\DecisionMaking\BLL\bin\Debug\BLL.pdb
+C:\Users\suzanna.vershinin\Desktop\DOTNET\DecisionMaking\DecisionMaking\BLL\bin\Debug\DataAccess.dll
+C:\Users\suzanna.vershinin\Desktop\DOTNET\DecisionMaking\DecisionMaking\BLL\bin\Debug\Models.dll
+C:\Users\suzanna.vershinin\Desktop\DOTNET\DecisionMaking\DecisionMaking\BLL\bin\Debug\Oracle.DataAccess.dll
+C:\Users\suzanna.vershinin\Desktop\DOTNET\DecisionMaking\DecisionMaking\BLL\bin\Debug\DataAccess.pdb
+C:\Users\suzanna.vershinin\Desktop\DOTNET\DecisionMaking\DecisionMaking\BLL\bin\Debug\Models.pdb
+C:\Users\suzanna.vershinin\Desktop\DOTNET\DecisionMaking\DecisionMaking\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\suzanna.vershinin\Desktop\DOTNET\DecisionMaking\DecisionMaking\BLL\obj\Debug\BLL.dll
+C:\Users\suzanna.vershinin\Desktop\DOTNET\DecisionMaking\DecisionMaking\BLL\obj\Debug\BLL.pdb

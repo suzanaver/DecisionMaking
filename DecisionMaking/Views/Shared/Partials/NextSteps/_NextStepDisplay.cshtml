@@ -1,0 +1,30 @@
+﻿@model Models.NextStep
+<tr class="next-step-input">
+    <td>
+        <label class="control-label">
+            @Model.Mission
+        </label>
+    </td>
+    <td>
+        <label class="control-label">
+            @Model.Responsibility
+        </label>
+    </td>
+    <td>
+        <label class="control-label">
+            @Model.Due_date
+        </label>
+    </td>
+    <td class="center">
+        <label class="control-label">
+            @Model.Date_postponed
+        </label>
+    </td>
+</tr>
+@*
+                             public int ID { get; set; }
+        public string Mission { get; set; }
+        public string Responsibility { get; set; }
+        public string Due_date { get; set; }
+        public string Date_postponed { get; set; }
+        public int DecisionID { get; set; }*@
